@@ -28,9 +28,12 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@master
-
-    # Add steps here like linting, testing, minification, etc.
       
+    - name: Install CLI
+      run: |
+        $(kubectl version --short)
+
+    # Add steps here like linting, testing, minification, etc.      
     - name: Setup ECR
       run: |
         # Login to AWS ECR
